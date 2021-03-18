@@ -1,4 +1,6 @@
-import path from "path"
+import todoRouter from './routes/controllers/todoController';
+import indexRouter from './routes/index';
+import usersRouter from './routes/users';
 
 var createError = require('http-errors');
 var express = require('express');
@@ -6,9 +8,6 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 require('dotenv').config();
-
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
 
 var app = express();
 
@@ -24,6 +23,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+
+//todo
+app.use('/todos',todoRouter);
 
 //testing
 app.use('/hello-world',(req,res) =>{
