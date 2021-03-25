@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "babel-node ./bin/www",
-    "dev": "nodemon index.js"
+    "dev": "nodemon --exec babel-node ./bin/www"
   },
   "dependencies": {
     "@babel/runtime": "^7.13.10",
